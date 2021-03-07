@@ -1,7 +1,7 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import { ColorSchemeName } from 'react-native';
+import { ColorSchemeName, Image, Text,View } from 'react-native';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
@@ -9,9 +9,9 @@ import MainTabNavigator from './MainTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 
 import Colors from "../constants/Colors"
-import { View } from '../components/Themed';
 
-import { Octicons ,MaterialCommunityIcons} from '@expo/vector-icons'; 
+import { Octicons ,MaterialCommunityIcons, MaterialIcons, FontAwesome5} from '@expo/vector-icons'; 
+import ConversationRoomScreen from '../screens/ConversationRoom';
 
 
 // If you are not familiar with React Navigation, we recommend going through the
@@ -49,14 +49,30 @@ function RootNavigator() {
     }}>
       <Stack.Screen name="Root" 
       options={{
-        title:"MyWhatsapp",
+        title:"Whatsapp",
         headerRight:()=><View style={{backgroundColor:Colors.light.tint,display:"flex",flexDirection:"row",alignItems:"center",justifyContent:"space-between",width:70,marginRight:10}}>
                             <Octicons name="search" size={24}  color="#fff" />
                             <MaterialCommunityIcons name="dots-vertical" size={24} color="#fff" />
                         </View>
       }}
      component={MainTabNavigator} />
-      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+      <Stack.Screen 
+      name="ConversationRoom"
+      component={ConversationRoomScreen}
+      options={({route})=>(
+        {
+         headerTitle:()=>(<View style={{width:200,flex:1,flexDirection:"row",alignItems:"center",height:30,marginLeft:-30}}>
+           <Image style={{height:40,width:40,marginRight:10,borderRadius:50}} source={{uri:route.params.image}} />
+           <Text style={{color:"#fff",fontSize:16,fontWeight:"bold"}} >{route.params.name}</Text>
+         </View>),
+         headerRight:()=>(
+           <View style={{display:"flex",flexDirection:"row",marginRight:10,width:100,justifyContent:"space-between"}}>
+             <MaterialIcons name="call" size={22} color={"#fff"} />
+             <FontAwesome5 name="video" size={22} color={"#fff"} />
+             <MaterialCommunityIcons name="dots-vertical" size={22} color={'#fff'} />
+           </View>
+         )
+        })} />
     </Stack.Navigator>
   );
 }
