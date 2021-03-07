@@ -65,5 +65,70 @@ export default {
 			id: 'u1',
 			name: 'Vadim',
 		},
-	}]
+	},
+	{
+		id: 'm8',
+		content: 'It is a bit tough, as I have 2 specializations. How about yours? Do you enjoy it?',
+		createdAt: '2020-10-03T14:49:00.000Z',
+		user: {
+			id: 'u2',
+			name: 'Lukas',
+		},
+	}, {
+		id: 'm9',
+		content: 'Big Data is really interesting. Cannot wait to go through all the material.',
+		createdAt: '2020-10-03T14:53:00.000Z',
+		user: {
+			id: 'u1',
+			name: 'Vadim',
+		}},
+		{
+			id: 'm10',
+			content: 'It is a bit tough, as I have 2 specializations. How about yours? Do you enjoy it?',
+			createdAt: '2020-10-03T14:49:00.000Z',
+			user: {
+				id: 'u2',
+				name: 'Lukas',
+			},
+		}, {
+			id: 'm11',
+			content: 'Big Data is really interesting. Cannot wait to go through all the material.',
+			createdAt: '2020-10-03T14:53:00.000Z',
+			user: {
+				id: 'u1',
+				name: 'Vadim',
+			}},
+			{
+				id: 'm12',
+				content: 'It is a bit tough, as I have 2 specializations. How about yours? Do you enjoy it?',
+				createdAt: '2020-10-03T14:49:00.000Z',
+				user: {
+					id: 'u2',
+					name: 'Lukas',
+				},
+			}, {
+				id: 'm13',
+				content: 'Big Data is really interesting. Cannot wait to go through all the material.',
+				createdAt: '2020-10-03T14:53:00.000Z',
+				user: {
+					id: 'u1',
+					name: 'Vadim',
+				}},
+				{
+					id: 'm14',
+					content: 'Big Data is really interesting. Cannot wait to go through all the material.',
+					createdAt: '2020-10-03T14:53:00.000Z',
+					user: {
+						id: 'u1',
+						name: 'Vadim',
+					}},
+					{
+						id: 'm15',
+						content: 'Big Data is really interesting. Cannot wait to go through all the material.',
+						createdAt: '2020-10-03T14:53:00.000Z',
+						user: {
+							id: 'u1',
+							name: 'Vadim',
+						}},
+]
 }
